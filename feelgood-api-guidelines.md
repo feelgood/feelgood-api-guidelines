@@ -183,9 +183,9 @@ Use the W3C header **Server-Timing** to provide timing info to clients.
 
 Two examples:
 ```
-Server-Timing: BFF-API;dur=666, auth-api;dur=87, auth-mongo-db;dur=54
+Server-Timing: BFF-API;dur=666, some-backend-api;dur=87, some-backend-mongo-db;dur=54
 
-Server-Timing: BFF-API;dur=1034, j4-api;dur=898, j4-SQL-db;dur=874
+Server-Timing: BFF-API;dur=1034, another-backend-api;dur=898, some-backend-SQL-db;dur=874
 ```
 
 Providing this information to clients has security issues, since you may reveal information on your backend API:s, systems and databases. One solution to this is to only provide the header when the client also provides a key or password. This can be easily provided in HTTP client scripts or tools like Postman.
