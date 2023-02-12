@@ -95,6 +95,16 @@ Use names that clearly communicate the semantics of the concepts that the resour
 
 ### MUST: Use plural forms for resources represented by collections
 
+### SHOULD: Provide search functionality via POST and search resource representations
+
+A simple and pragmatic way to provide search capability to a collection resource is to implement *filtering* support via query strings when doing a GET on the collection resource. See the section "SHOULD: Use conventional query string attribute names".
+
+However, for more complex situations it may be better to provide a dedicated resource representing a search resource that clients can POST to. Then the HTTP body can by filled with a search resource representation.
+
+An API may provide a top level search resource like `{api-domain-name}/search`, or it may provide collection specific search resources like `{api-domain-name}/apples/search` and `{api-domain-name}/oranges/search`.
+
+One way of implementing a search resource representation is via a query by example JSON-object with the same item attributes as the items in the collection have.
+
 ### MUST: Use snake case for resource names and query parameters
 
 Do not use CamelCase!
